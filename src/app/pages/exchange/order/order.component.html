@@ -1,0 +1,154 @@
+<!-- <nb-card class="own-scroll" size="small">
+</nb-card> -->
+<nb-card>
+  <!-- <nb-card-header>Order</nb-card-header> -->
+  <nb-tabset>
+    <nb-tab tabTitle="Limit">
+      <nb-card-body>
+        <form [formGroup]="settingFormGroup">
+          <div class="form-group">
+            <nb-radio-group style="display:flex" status="success" formControlName="type" >
+              <nb-radio style="flex:1"
+                [value]="'buy'"
+                status="success"
+                >
+                Buy
+              </nb-radio>
+              <nb-radio style="flex:1"
+              [value]="'sell'"
+               status="danger"
+              >
+              Sell
+            </nb-radio>
+          </nb-radio-group>
+          </div>
+          <div class="form-group">
+            <label for="price" class="label">Price</label>
+            <nb-form-field>
+              <input fullWidth step="0.01" min="0.01" style="text-align:right"  type="number" formControlName="price" nbInput>
+              <span nbSuffix nbButton ghost >
+               USD
+              </span>
+              <span nbPrefix nbButton ghost >Price</span>
+            </nb-form-field>
+            <!-- <input formControlName="price" status="{{f.price.errors?'danger':'success'}}" type="number" nbInput
+              fullWidth id="price" placeholder="Price"> -->
+          </div>
+          <div class="form-group">
+            <label for="amount" class="label">Amount</label>
+            <nb-form-field>
+              <input fullWidth  style="text-align:right"  type="number" formControlName="amount" nbInput>
+              <span nbSuffix nbButton ghost >
+               BTC
+              </span>
+              <span nbPrefix nbButton ghost >Size</span>
+            </nb-form-field>
+            <!-- <input formControlName="amount" status="{{f.amount.errors?'danger':'success'}}" type="number" nbInput
+              fullWidth id="amount" placeholder="Amount"> -->
+          </div>
+          <div class="form-group">
+            <label for="tp" class="label">Take Profit</label>
+            <nb-form-field>
+              <input fullWidth step="0.001" style="text-align:right"  type="number" formControlName="tp" nbInput>
+              <span nbSuffix nbButton ghost >
+                Price
+              </span>
+              <span nbPrefix nbButton ghost >Profit</span>
+            </nb-form-field>
+            <!-- <input formControlName="" status="{{f.tp.errors?'danger':'success'}}" type="number" nbInput fullWidth
+              id="tp" placeholder="TP"> -->
+          </div>
+          <div class="form-group">
+            <label for="sl" class="label">Stop loss</label>
+            <nb-form-field>
+              <input fullWidth  style="text-align:right"  type="number" formControlName="sl" nbInput>
+              <span nbSuffix nbButton ghost >
+                Price
+              </span>
+              <span nbPrefix nbButton ghost >Loss</span>
+            </nb-form-field>
+            <!-- <label for="SL" class="label"></label>
+            <input formControlName="sl" status="{{f.sl.errors?'danger':'success'}}" type="number" nbInput fullWidth
+              id="sl" placeholder="SL"> -->
+          </div>
+          <div class="action">
+            <button *ngIf="settingFormGroup && settingFormGroup.value.type==='buy'" fullWidth [disabled]="settingFormGroup.invalid" type="submit" nbButton matRipple
+              status="success">Open long</button>
+            <button *ngIf="settingFormGroup && settingFormGroup.value.type==='sell'" fullWidth [disabled]="settingFormGroup.invalid" type="submit" nbButton matRipple
+              status="danger">Open short</button>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-tab>
+    <nb-tab tabTitle="Market">
+      <div style="height:468px;">
+        <nb-card-body>
+          <nb-card-body>
+            <form [formGroup]="settingFormGroup">
+              <div class="form-group">
+                <nb-radio-group style="display:flex" status="success" formControlName="type" >
+                  <nb-radio style="flex:1"
+                    [value]="'buy'"
+                    status="success"
+                    >
+                    Buy
+                  </nb-radio>
+                  <nb-radio style="flex:1"
+                  [value]="'sell'"
+                   status="danger"
+                  >
+                  Sell
+                </nb-radio>
+              </nb-radio-group>
+              </div>
+              <div class="form-group">
+                <label for="amount" class="label">Amount</label>
+                <nb-form-field>
+                  <input fullWidth  style="text-align:right"  type="number" formControlName="amount" nbInput>
+                  <span nbSuffix nbButton ghost >
+                   BTC
+                  </span>
+                  <span nbPrefix nbButton ghost >Size</span>
+                </nb-form-field>
+                <!-- <input formControlName="amount" status="{{f.amount.errors?'danger':'success'}}" type="number" nbInput
+                  fullWidth id="amount" placeholder="Amount"> -->
+              </div>
+              <div class="form-group">
+                <label for="tp" class="label">Take Profit</label>
+                <nb-form-field>
+                  <input fullWidth  style="text-align:right"  type="number" formControlName="tp" nbInput>
+                  <span nbSuffix nbButton ghost >
+                    Price
+                  </span>
+                  <span nbPrefix nbButton ghost >Profit</span>
+                </nb-form-field>
+                <!-- <input formControlName="" status="{{f.tp.errors?'danger':'success'}}" type="number" nbInput fullWidth
+                  id="tp" placeholder="TP"> -->
+              </div>
+              <div class="form-group">
+                <label for="sl" class="label">Stop loss</label>
+                <nb-form-field>
+                  <input fullWidth  style="text-align:right"  type="number" formControlName="sl" nbInput>
+                  <span nbSuffix nbButton ghost >
+                   Price
+                  </span>
+                  <span nbPrefix nbButton ghost >Loss</span>
+                </nb-form-field>
+                <!-- <label for="SL" class="label"></label>
+                <input formControlName="sl" status="{{f.sl.errors?'danger':'success'}}" type="number" nbInput fullWidth
+                  id="sl" placeholder="SL"> -->
+              </div>
+              <div class="action">
+                <button *ngIf="settingFormGroup && settingFormGroup.value.type==='buy'" fullWidth [disabled]="settingFormGroup.invalid" type="button" nbButton matRipple
+              status="success">Open long</button>
+            <button *ngIf="settingFormGroup && settingFormGroup.value.type==='sell'" fullWidth [disabled]="settingFormGroup.invalid" type="button" nbButton matRipple
+              status="danger">Open short</button>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card-body>
+      </div>
+    </nb-tab>
+  </nb-tabset>
+
+</nb-card>

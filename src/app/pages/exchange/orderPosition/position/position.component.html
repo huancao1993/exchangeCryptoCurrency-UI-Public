@@ -1,0 +1,13 @@
+<div class="infinite-cards row">
+  <div class="col-md-12 col-lg-12 col-xxxl-12">
+    <nb-card class="own-scroll">
+      <nb-list nbInfiniteList [threshold]="500">
+        <nb-list-item *ngFor="let newsPost of news">
+          <div>
+            {{newsPost}}
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+</div>
