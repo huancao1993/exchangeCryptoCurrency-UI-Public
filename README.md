@@ -12,9 +12,6 @@ Get material ngx-admin integrated with backend technology of your choice. [Check
 - Over 40+ Angular Components and 60+ Usage Examples. Kick off your project and save money by using ngx-admin.
 - Already using ngx-admin and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
 - ngx-admin material works perfectly with Angular Material and Nebular. Take the best from both!
-
-### To use material theme checkout `feat/material-theme` branch
-
 # Admin template based on Angular 10+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="https://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=hero_banner_corporate"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
